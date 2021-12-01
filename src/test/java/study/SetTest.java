@@ -8,12 +8,14 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.offset;
 
 public class SetTest {
+    Scanner scanner;
     private Set<Integer> numbers;
 
 //Set Collection에 대한 학습 테스트
@@ -140,6 +142,13 @@ public class SetTest {
                 .isEqualTo(3, offset(1d))//오프셋 1 기준으로 3과 같고(상수 첮번째와)
                 .isEqualTo(3.1, offset(0.1d))//오프셋 0.1기준으로 3.1과 같으며(소수점1째자리와)
                 .isEqualTo(3.14);//오프셋 없이는 3.14와 같다
+    }
+
+    @Test
+    void String_Calculator(){
+        String value = scanner.nextLine();
+        String[] values = value.split(" ");
+        int number = Integer.parseInt(value);
     }
 
 
